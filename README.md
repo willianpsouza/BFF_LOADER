@@ -7,7 +7,7 @@ npn install express
 # npn install pm2 ou apt install pm2
 #
 #
-pm2 start frondend.js -i 2
+pm2 start frontend.js -i 2
 pm2 start backend.js -i 4
 
 
