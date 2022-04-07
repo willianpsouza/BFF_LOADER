@@ -33,12 +33,10 @@ const CallBase = axios.create({
 //UTILIZANDO KEEP ALIVE
 let getFacts = async (v) => {
   if(v == 1 ){
-    const httpAgent = new http.Agent({keepAlive : false,timeout : 100, })
     let response = await CallBase.get('/sdados.json',{timeout : 100});
     return response;
   }
   if(v == 2 ){
-    const httpAgent = new http.Agent({keepAlive : false,timeout : 100, })
     let response = await CallBase.get('/rdados.json',{timeout : 100});
     return response;
   }
