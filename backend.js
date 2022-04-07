@@ -232,17 +232,20 @@ data = [
     }
   ]
 
-function sleep(ms) {
+async function sleep(ms) {
   return new Promise((resolve) => {
     setTimeout(resolve, ms);
   });
 }
 
 //DADOS COM ALGUMA TAXA DE DELAY/ERRO
-app.get('/rdados.json', (req, res) => {
+app.get('/rdados.json', async (req, res) => {
   var c = Math.floor(Math.random() * 150);
-  if(c > 90){
-    sleep(c);
+
+  if (c > 100){
+    await sleep(2000)
+  }else if(c > 90){
+    await sleep(c);
   }
   res.send(data) 
 })
