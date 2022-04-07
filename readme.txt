@@ -60,3 +60,5 @@ limitando cpu https://www.makeuseof.com/how-to-limit-cpu-usage-of-a-process-in-l
 # THOUGHTS
 Kaoe Coito
 
+# validar !! https://github.com/node-modules/agentkeepalive
+parece ser a solucao definitiva !
