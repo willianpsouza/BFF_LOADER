@@ -1,8 +1,8 @@
 FROM node:current-alpine3.14
 
-RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app/node_modules
+RUN mkdir -p /app && chown -R node:node /app
 
-WORKDIR /home/node/app
+WORKDIR /app
 
 COPY package*.json ./
 
