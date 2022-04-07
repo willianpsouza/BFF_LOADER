@@ -8,11 +8,11 @@ COPY package*.json ./
 
 RUN npm install
 
-COPY . .
-COPY --chown=node:node . .
+COPY --chown=node:node *.js ./
+COPY --chown=node:node containerstart.sh ./
 
 USER node
 
-EXPOSE 3000
+EXPOSE 3001
 
 CMD ["sh" , "containerstart.sh"]
