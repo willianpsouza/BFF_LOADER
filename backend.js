@@ -3,6 +3,7 @@ const express = require('express')
 const app = express()
 const port = 3000
 
+//ONLY 7K json random data
 data = [
     {
       "_id": "624dfd1f0c72fe90c028334e",
@@ -237,17 +238,18 @@ function sleep(ms) {
   });
 }
 
-app.get('/teste.json', (req, res) => {
+//DADOS COM ALGUMA TAXA DE DELAY/ERRO
+app.get('/rdados.json', (req, res) => {
   var c = Math.floor(Math.random() * 150);
-  console.log(c)
-
   if(c > 90){
     sleep(c);
-    
-    
   }
-  res.send(data)
-  
+  res.send(data) 
+})
+
+//DADOS COM SEM TAXA DE ERRO
+app.get('/sdados.json', (req, res) => {
+  res.send(data) 
 })
 
 app.listen(port, () => {
